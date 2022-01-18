@@ -1,0 +1,47 @@
+/**
+ * A lab that solves the Collatz Conjecture Math * * problem and 
+ * counts the of odd and even steps i it takes to get to 1
+ * @version October 8, 2020
+ * @author K Moffatt
+ */
+
+import java.util.Scanner; 
+
+class Main 
+{
+  public static void main(String[] args) 
+  {
+    Scanner scanner = new Scanner(System.in);
+    int intX;//inputted value
+    int stepE = 0;
+    int stepO = 0;//number of odd and even steps it takes to get to 0
+
+    //get input from user
+    System.out.print("Enter a number larger than 0 (Can't have decimals or be negative): ");
+    intX = scanner.nextInt();
+
+    System.out.println("Your number is: " + intX);//verifiying that the inputted number is valid
+
+    //do the Collatz Conjecture calculations
+    while(intX != 1)
+    { 
+      System.out.println("in while loop. Number is now " + intX);// show the steps
+      if(intX % 2 == 0)//determins if intX is currently even
+      {
+        intX = (intX / 2);//does the eqution for an even step
+        stepE++;//adds 1 to the number of even steps counted
+      }
+
+      else if (intX % 2 != 0)//determins if intX is currently odd
+      {
+        intX = (intX * 3 + 1);//does the eqution for an odd step
+        stepO++;//adds 1 to the number of odd steps counted
+      }
+    }
+  
+  System.out.println("The final number is: " + intX);//didplay the final number
+  System.out.println("Number of even steps needed to get to 1:" + stepE);//display number of even steps
+  System.out.println("Number of odd steps needed to get to 1:" + stepO);//display number of odd steps
+  System.out.println("Program terminated normally. You solved the Collatz Conjecture Math problem.");
+  }
+}
