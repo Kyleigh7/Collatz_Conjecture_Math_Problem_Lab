@@ -20,7 +20,7 @@ class Main
     System.out.print("Enter a number larger than 0 (Can't have decimals or be negative): ");
     intX = scanner.nextInt();
 
-    System.out.println("Your number is: " + intX);//verifiying that the inputted number is valid
+    System.out.println("Your number is: " + intX);//print out inputted number 
 
     //do the Collatz Conjecture calculations
     while(intX != 1)
